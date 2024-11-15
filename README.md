@@ -1,4 +1,4 @@
-# 📺 Loops
+# 🚀Variables
 
 ### Basic Concepts of Variables in Python
 

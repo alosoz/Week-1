@@ -1,3 +1,3 @@
 # Table of contents
 
-* [📺 Loops](README.md)
+* [🚀Variables](README.md)
