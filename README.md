@@ -1,199 +1,246 @@
-# Page
+# Untitled
 
-## Strings in Python
+### Basic Concepts of Variables in Python
 
-A string is a data type used in computer programming that represents a sequence of characters. Strings are used to represent words, sentences, or any character sequences. They are an important data type in Python and many other programming languages, utilized in various fields such as text processing, data analysis, receiving user input, and reading/writing text-based files.
+Variables are fundamental building blocks used to store and process data. Defining variables in Python is straightforward. To create a variable, simply choose a name and assign a value to it. Here’s the basic usage:
 
-Strings are typically created by enclosing text in double quotes (`"..."`) or single quotes (`'...'`). Here are some examples:
+```python
+# Defining variables and assigning values
+name = "Ahmet"
+age = 25
+pi = 3.14
+```
+
+In the example above, `name`, `age`, and `pi` are assigned a text, an integer, and a floating-point number, respectively.
+
+#### Properties of Variables in Python
+
+1. **Variable Names**
+
+When naming variables in Python, there are a few rules to follow. These rules help keep your code more readable and error-free. Here are the basic rules for naming variables in Python:
+
+* Variable names must start with a letter (A-Z or a-z) or an underscore (\_). They cannot start with a number.
+* Names can contain letters (A-Z or a-z), digits (0-9), or underscores (\_).
+* Python is case-sensitive, meaning `name` and `Name` would be considered different variables.
+* Reserved keywords in Python (such as `if`, `else`, `while`, `for`, `def`, etc.) cannot be used as variable names.
+* Variable names should be meaningful and descriptive to help other developers understand your code better.
+* Names cannot contain spaces or special characters. Only letters, numbers, and underscores are allowed.
+* For longer variable names, use naming styles like `snake_case` or `camelCase`:
+  * `snake_case` separates words with underscores, all lowercase.
+  * `camelCase` uses lowercase for the first word and capitalizes subsequent words.
+
+Examples:
+
+```python
+# Valid variable names
+name = "Ahmet"
+age = 25
+average_grade = 85.5
+total_people = 100
+
+# Invalid variable names
+5_years = 5  # Cannot start with a digit
+if = 10      # Cannot use a reserved keyword
+first name = "Ali Veli"  # Cannot contain spaces
+```
+
+By following these rules when creating variable names, you ensure your code is more readable and understandable.
+
+2. **Reserved Keywords in Python**
+
+Python’s reserved keywords have special meanings and serve specific functions in the language. These keywords define the syntax and semantics of Python, so they cannot be used as variable names. Here are Python's reserved keywords:
+
+```python
+False, class, finally, is, return
+None, continue, for, lambda, try
+True, def, from, nonlocal, while
+and, del, global, not, with
+as, elif, if, or, yield
+assert, else, import, pass
+break, except, in, raise
+```
+
+#### Multi-Word Variable Names
+
+In Python, there are different approaches to creating variable names that consist of multiple words:
+
+*   **Snake Case:** In this style, all letters are lowercase, and words are separated by underscores.
+
+    ```python
+    average_grade = 85.5
+    student_full_name = "Ahmet Yılmaz"
+    ```
+*   **Camel Case:** In this style, the first word is lowercase, and subsequent words start with a capital letter.
+
+    ```python
+    averageGrade = 85.5
+    studentFullName = "Ahmet Yılmaz"
+    ```
+
+Both approaches are valid, but "snake\_case" is more commonly used in the Python community, as it aligns with Python libraries and standards. Regardless of the style you choose, variable names should be meaningful, descriptive, and helpful to other developers reading your code.
+
+3. **Variable Types**
+
+In Python, the type of a variable is automatically determined when a value is assigned. You don't need to specify the type. Basic data types include:
+
+* `int` (integer)
+* `float` (floating-point number)
+* `str` (string)
+* `bool` (boolean - `True` or `False`)
+
+Example:
+
+```python
+age = 25              # int
+average_grade = 85.5  # float
+name = "Ahmet"        # str
+is_correct = True     # bool
+```
+
+#### Using Variables
+
+**Assigning Values to Variables**
+
+Assigning a value to a variable in Python is simple. After defining a variable, you can assign any value to it. Here are some examples:
+
+**Assigning an Integer:**
+
+```python
+x = 10
+```
+
+**Assigning a Floating-Point Number:**
+
+```python
+pi = 3.14
+```
+
+**Assigning a String:**
 
 ```python
 name = "Ahmet"
-surname = 'Yılmaz'
-sentence = "Hello, world!"
 ```
 
-You can perform various operations with strings, such as:
-
-#### Concatenation
-
-You can concatenate strings:
+**Assigning a Boolean Value:**
 
 ```python
-full_name = name + " " + surname  # "Ahmet Yılmaz"
+is_correct = True
 ```
 
-#### Repetition
-
-You can create repetitions by multiplying strings:
+**Assigning Values from Other Variables:**
 
 ```python
-repeated_text = name * 3  # "AhmetAhmetAhmet"
+x = 5
+y = x  # Assigns the value of x to y
 ```
 
-#### Length
-
-You can measure the length of a string:
+**Assigning Results of Expressions:**
 
 ```python
-length = len(sentence)  # Number of characters in 'sentence'
+a = 5
+b = 10
+total = a + b  # Assigns the result of the expression to total
 ```
 
-#### Searching
-
-You can search for specific characters or substrings within strings:
+**Swapping Values:**
 
 ```python
-if "world" in sentence:
-    print("The word 'world' is in the sentence.")
+x = 5
+y = 10
+
+x, y = y, x  # Swaps the values of x and y
 ```
 
-#### Slicing
+As shown in these examples, once a variable is defined, you can directly assign a value to it. Since Python is a dynamically typed language, you don’t need to specify the type of the variable beforehand; Python will determine it based on the assigned value.
 
-You can slice strings:
+**Reassigning Values to Variables**
+
+In Python, it’s easy to change the value of a variable by reassigning it. To update a variable’s value, simply reassign it:
 
 ```python
-pythonKodu kopyalasubstring = sentence[8:13]  # "world"
+x = 5
+print("Initial value of x:", x)
+
+x = 10  # Updates the value of x
+print("Updated value of x:", x)
+
+y = 2
+y = y + 3  # Updates the value of y (new value: 5)
+print("Updated value of y:", y)
+
+z = 7
+z += 1  # Increases z by 1 (new value: 8)
+print("Updated value of z:", z)
 ```
 
-You can use indices to access specific characters in a string or perform operations on it. Indices specify the order of characters in a string and start from zero. Positive indices increase from left to right (starting at 0), while negative indices increase from right to left (starting at -1).
+As seen above, reassigning a variable is as simple as assigning it a new value. You can also use shorthand operators (like `+=` or `-=`) to increase or decrease a variable’s value.
 
-For example, consider the word "Hello":
+**Swapping Values of Multiple Variables in One Line**
 
-```diff
- H  e  l  l  o
- 0  1  2  3  4
--5 -4 -3 -2 -1
-```
-
-This table shows the positive and negative indices for each character.
-
-You can access a specific character or substring in a string using its index. Here are some examples:
+Python allows you to assign values to multiple variables simultaneously on a single line:
 
 ```python
-text = "Hello"
-
-first_character = text[0]  # "H"
-second_character = text[1]  # "e"
-last_character = text[-1]  # "o"
+x = 10
+y = 5
+x, y = y, x  # Swaps values of x and y
 ```
 
-You can also use indices in slicing operations:
+This approach allows you to match multiple variables with corresponding values in a single statement. Be sure the number of variables matches the number of values; otherwise, you’ll get an error.
+
+**Assigning Values to Multiple Variables in One Line**
+
+Python also enables assigning values to multiple variables on a single line:
 
 ```python
-pythonKodu kopyalasubstring = text[1:4]  # "el"
+a, b, c = 5, 3.2, "Hello"
+
+print(a)
+print(b)
+print(c)
 ```
 
-This example retrieves a substring containing the characters from index 1 to 4 (not including 4).
-
-#### String Slicing
-
-In Python, when slicing a string, the starting index is included, while the ending index is not. For instance, consider the word "Hello":
+Output:
 
 ```
- H  e  l  l  o
- 0  1  2  3  4
+5
+3.2
+Hello
 ```
 
-If the variable `text` is "Hello":
+Note: Ensure the number of variables matches the number of values; otherwise, you’ll encounter an error.
 
-* The slice `text[1:4]` contains characters starting from index 1 (`e`) to index 4 (not including `l`), resulting in "el".
-* The slice `text[2:5]` contains characters starting from index 2 (`l`) to index 5 (not including `o`), resulting in "ll".
+**Assigning the Same Value to Multiple Variables**
 
-This behavior is due to indices starting from 0, and counting the characters between the indices indicates how many characters will be included in the slice. Thus, the starting index is included while the ending index is excluded.
-
-If only the starting or ending index is omitted, Python automatically slices from the beginning or to the end of the string. For example:
-
-* The expression `text[:4]` includes characters from the start of the string to index 4 (not including), resulting in "Hell".
-* The expression `text[2:]` includes characters starting from index 2 (`l`) to the end of the string, resulting in "llo".
-* The expression `text[:]` includes the entire string.
-
-It's important to note that while the starting index is included, the ending index is not when performing slicing.
-
-These are just basic examples of string manipulation. Python provides many functions and methods to perform more complex operations, format strings, and manipulate text.
-
-#### String Methods in Python
-
-Python has a variety of string methods for manipulating string data. These methods are used to process, transform, and format text data. Here are some commonly used Python string methods:
-
-* `len()`: Returns the length of a string. Note: The `len` method starts from 1, which is different from indexing.
+If you want to assign the same value to multiple variables at once, you can do it like this:
 
 ```python
-text = "Hello, world!"
-length = len(text)  # 13
+x = y = z = "same"
+
+print(x)
+print(y)
+print(z)
 ```
 
-* `lower()`: Converts the string to lowercase.
+Output:
+
+```
+same
+same
+same
+```
+
+In this example, the string `"same"` is assigned to all three variables, `x`, `y`, and `z`.
+
+You can also perform mathematical operations using variables:
 
 ```python
-text = "Hello, WORLD!"
-lowercase = text.lower()  # "hello, world!"
+a = 10
+b = 5
+sum_result = a + b
+product = a * b
+division = a / b
 ```
 
-* `upper()`: Converts the string to uppercase.
+With this foundational information, you can create more detailed guides in GitBook about working with variables in Python. As you progress, you can delve into more advanced topics like data structures, conditions, loops, and functions.
 
-```python
-text = "Hello, world!"
-uppercase = text.upper()  # "HELLO, WORLD!"
-```
-
-* `capitalize()`: Capitalizes the first character of the string, leaving the rest in lowercase.
-
-```python
-text = "hello, world!"
-capitalized = text.capitalize()  # "Hello, world!"
-```
-
-* `title()`: Capitalizes the first character of each word in the string.
-
-```python
-text = "hello, world!"
-title_case = text.title()  # "Hello, World!"
-```
-
-* `strip()`: Removes whitespace from the beginning and end of the string.
-
-```python
-text = "   Hello, world!   "
-cleaned_text = text.strip()  # "Hello, world!"
-```
-
-* `split()`: Splits the string by a specified delimiter and returns a list.
-
-```python
-text = "Hello,world,how are you?"
-words = text.split(",")  # ["Hello", "world", "how are you?"]
-```
-
-* `replace()`: Replaces a specified substring with another substring.
-
-```python
-text = "Hello, world!"
-new_text = text.replace("Hello", "Hi")  # "Hi, world!"
-```
-
-* `find()`: Returns the index of a specified substring in the string.
-
-```python
-text = "Hello, world!"
-position = text.find("world")  # 7
-```
-
-* `startswith()`: Checks if the string starts with a specified substring.
-
-```python
-text = "Hello, world!"
-if text.startswith("Hello"):
-    print("It starts with 'Hello'!")
-```
-
-* `endswith()`: Checks if the string ends with a specified substring.
-
-```python
-text = "Hello, world!"
-if text.endswith("world!"):
-    print("It ends with 'world!'")
-```
-
-These are just a few examples, and there are many different string methods available in Python. Using string methods makes it easy to process and format text data. For more information on string methods, you can refer to the Python documentation.
-
-{% embed url="https://www.youtube.com/watch?v=Ctqi5Y4X-jA" %}
+{% embed url="https://www.youtube.com/watch?v=cQT33yu9pY8" %}
